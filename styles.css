@@ -1,0 +1,151 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  font-family: "Kode Mono", monospace;
+}
+body {
+  height: 100vh;
+  background-color: #228be6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #495057;
+}
+.container {
+  max-width: 500px;
+  width: 100%;
+  padding: 0 2rem;
+  margin: 0 auto;
+}
+.mutli-page {
+  box-shadow: 0px 0px 2px rgb(0, 0, 0, 0.1);
+  background-color: #f3f0ff;
+  padding: 4rem 4rem;
+  border-radius: 4px;
+}
+.form-total {
+  display: block;
+}
+.form-header h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.progress-bar {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: space-between;
+}
+.page-step {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: inherit;
+  box-shadow: 0px 0px 2px rgb(0, 0, 0, 0.3);
+  position: relative;
+}
+.page-step.active {
+  background-color: #1c7ed6;
+  color: #e7f5ff;
+}
+.page-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  width: 200%;
+  transform: translateX(100%);
+  height: 2px;
+  background-color: #1c7ed6;
+}
+
+.form-page {
+  display: none;
+  flex-direction: column;
+  gap: 2rem;
+  animation: fade-in 0.1s ease-in;
+}
+.form-page.active {
+  display: flex;
+}
+.form-page input {
+  font-size: 1.6rem;
+  padding: 1.5rem 3rem;
+  border: none;
+  font-family: inherit;
+  box-shadow: 0px 0px 2px rgb(0, 0, 0, 0.3);
+  outline: none;
+  border-radius: 3px;
+}
+.btns {
+  display: flex;
+  justify-content: stretch;
+  gap: 0.8rem;
+}
+.btn {
+  display: block;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  background-color: #1c7ed6;
+  color: #e7f5ff;
+  transition: all 0.2s ease-in;
+}
+.btn:hover {
+  background-color: #228be6;
+}
+
+.submit {
+  display: none;
+  transition: all 0.5s;
+  font-size: 2rem;
+  text-align: center;
+}
+.submit h1 {
+  margin-bottom: 5rem;
+}
+.go-back {
+  display: block;
+  padding: 0.8rem 1rem;
+  width: 100%;
+  border: none;
+  border-radius: 5px;
+  font-family: inherit;
+  background-color: #1c7ed6;
+  color: #e7f5ff;
+  transition: all 0.2s ease-in;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .container {
+    padding: 0 0.2rem;
+  }
+  .mutli-page {
+    padding: 2rem 2rem;
+  }
+  .page-step:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: translateX(150%);
+    height: 2px;
+    background-color: #1c7ed6;
+  }
+}
